@@ -1,0 +1,82 @@
+<!--This home.html file-->
+
+<!--Load base.html file-->
+{% extends "base.html" %}
+<!--Load amazing crisp  file-->
+{% load bootstrap3 %}
+
+<!--Load title frome title variable from home function-->
+{% block head_title %}Welcome | {% endblock %}
+
+
+<!--This is block content for jumbortron-->
+{% block jumbotron %}
+<div class="jumbotron">
+       
+      
+<!-- Main component for a primary marketing message or call to action -->
+       <div class="row">
+         <div class="col-sm-6">
+        <h1>Hello !</h1>
+        <p>I am Ataul Moala Anas  and I Am a Django developer .This is my Landing page . You all can contact me or mail me through this pade</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="" role="button">Join us &raquo;</a>
+        </p>
+         </div>
+         <div class="col-sm-6" style="background-color:black;height:300px;"></div>
+       </div>
+</div>
+{% endblock %}
+
+<!--This is block content for form-->
+{% block content %}
+       <div class="container">
+        <form  method="POST" action="" role="form">{% csrf_token %}
+         <div class="row">
+          <div class="col-md-6">
+            {%  bootstrap_field form.first_name %}
+          </div>
+          <div class="col-md-6">
+            {%  bootstrap_field form.last_name %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            {%  bootstrap_field form.birth_date %}
+          </div>
+          <div class="col-md-6">
+            {%  bootstrap_field form.gender %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            {%  bootstrap_field form.batch_number %}
+          </div>
+          <div class="col-md-6">
+            {%  bootstrap_field form.email %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            {%  bootstrap_field form.address %}
+          </div>
+          <div class="col-md-6">
+            {%  bootstrap_field form.blood_gruoup %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            {%  bootstrap_field form.college %}
+          </div>
+          <div class="col-md-6">
+            {%  bootstrap_field form.alma_mater %}
+          </div>
+        </div>
+        {%  bootstrap_field form.status %}
+            <input class="btn btn-primary" type="submit" value="Sign Up"/>
+        </form>
+
+       </div>
+      
+
+{% endblock %}
